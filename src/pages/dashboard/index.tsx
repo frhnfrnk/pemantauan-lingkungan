@@ -8,7 +8,7 @@ export default function Dashboard() {
     const router = useRouter();
 
 
-
+    //Just continue this one, i dont understand anything
     return (
         <div className="flex">
             <Panel />
