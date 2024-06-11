@@ -29,7 +29,7 @@ class BMKGReader {
 	 */
 	public static getWeatherDataURL(province?: String | undefined | null): URL {
 		if (!province) province = "Indonesia";
-		return new URL(`./DataMKG/MEWS/DigitalForecast/DigitalForecast-${province}.xml`, BMKGReader.BASE_URL);
+		return new URL(`./DataMKG/MEWS/DigitalForecast/DigitalForecast-${province.replace(" ", "")}.xml`, BMKGReader.BASE_URL);
 	}
 
 	/**
