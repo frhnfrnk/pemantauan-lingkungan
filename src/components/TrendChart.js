@@ -60,7 +60,7 @@ const AirQualityChart = ({ data, title, pollutant, color }) => {
   }, [data, pollutant, color]);
 
   return (
-    <svg ref={chartRef} width={850} height={600} className="mx-auto my-8" />
+    <svg ref={chartRef} width={800} height={600} className="mx-auto my-8" />
   );
 };
 
