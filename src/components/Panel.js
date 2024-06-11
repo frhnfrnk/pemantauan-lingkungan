@@ -18,8 +18,6 @@ export default function Panel() {
         <div className="flex">
             <div className="bg-[#008080] h-[100vh] w-[6vw] p-5">
                 <div className="flex flex-col gap-16 items-center mt-52">
-                    <FaHome className="w-10 h-10 text-white cursor-pointer hover:opacity-90" onClick={() => router.push("/home")}/>
-                    <IoIosNotifications className="w-10 h-10 text-white cursor-pointer hover:opacity-90" onClick={() => router.push("/notifications")}/>
                     <IoSettings className="w-10 h-10 text-white cursor-pointer hover:opacity-90" onClick={() => setIsCustomizationHoverd(!isCustomizationHovered)}/>
                 </div>
             </div>
