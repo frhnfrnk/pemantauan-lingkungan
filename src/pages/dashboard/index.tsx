@@ -1,23 +1,21 @@
+import dynamic from 'next/dynamic';
 import Panel from "@/components/Panel";
 import { useRouter } from "next/router";
-import { MapContainer,TileLayer, Marker, Popup } from "react-leaflet";
+import Map from '@/components/Map';
 
+// Dynamically import MapContainer, TileLayer, Marker, and Popup from react-leaflet
+const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
+const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
+const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
+const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
 
 export default function Dashboard() {
-
     const router = useRouter();
 
-
-    //Just continue this one, i dont understand anything
     return (
         <div className="flex">
             <Panel />
-            <MapContainer center={[48.8566, 2.3522]} zoom={13}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />    
-            </MapContainer>
+            <Map />
         </div>
-    )
+    );
 }
