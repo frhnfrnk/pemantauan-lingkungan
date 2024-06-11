@@ -80,7 +80,6 @@ export default function Outsource() {
 	function getClosestTimeRangeValue(data: any) {
 		const timerange = data.timerange;
 		const currentTime = new Date();
-		let closestTime = null;
 		let closestTimeDiff = Infinity;
 		let closestValue = null;
 
@@ -101,7 +100,6 @@ export default function Outsource() {
 
 			if (timeDiff < closestTimeDiff) {
 				closestTimeDiff = timeDiff;
-				closestTime = time;
 				closestValue = timerange[time];
 			}
 		}
@@ -153,15 +151,15 @@ export default function Outsource() {
 					<div className="grid grid-cols-2 gap-4">
 						<div className="flex flex-row items-center">
 							<p className="font-semibold w-32">Temperature:</p>
-							<p>{selectedDomainWeather?.temperature}°C</p>
+							<p>{selectedDomainWeather?.temperature}</p>
 						</div>
 						<div className="flex flex-row items-center">
 							<p className="font-semibold w-32">Humidity:</p>
-							<p>{selectedDomainWeather?.humidity}%</p>
+							<p>{selectedDomainWeather?.humidity}</p>
 						</div>
 						<div className="flex flex-row items-center">
 							<p className="font-semibold w-32">Wind Speed:</p>
-							<p>{selectedDomainWeather?.windSpeed} km/h</p>
+							<p>{selectedDomainWeather?.windSpeed}</p>
 						</div>
 						<div className="flex flex-row items-center">
 							<p className="font-semibold w-32">Wind Direction:</p>
@@ -169,24 +167,6 @@ export default function Outsource() {
 						</div>
 					</div>
 				</div>
-				// <>
-				// 	<div className="flex flex-row gap-x-4">
-				// 		<p>Temperature :</p>
-				// 		<p>{selectedDomainWeather?.temperature}</p>
-				// 	</div>
-				// 	<div className="flex flex-row gap-x-4">
-				// 		<p>Humidity :</p>
-				// 		<p>{selectedDomainWeather?.humidity}</p>
-				// 	</div>
-				// 	<div className="flex flex-row gap-x-4">
-				// 		<p>Wind Speed :</p>
-				// 		<p>{selectedDomainWeather?.windSpeed}</p>
-				// 	</div>
-				// 	<div className="flex flex-row gap-x-4">
-				// 		<p>Wind Direction :</p>
-				// 		<p>{selectedDomainWeather?.windDirection}</p>
-				// 	</div>
-				// </>
 			)}
 		</div>
 	);
