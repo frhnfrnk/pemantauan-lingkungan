@@ -71,7 +71,7 @@ function App() {
       <div className="absolute top-0 left-0 mt-4 ml-4 z-50">
         <button
           onClick={toggleSettingsModal}
-          className="bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
+          className="bg-white shadow-md rounded-full p-2 hover:bg-gray-100 mt-36 w-16 h-16 flex justify-center items-center"
         >
           <IoSettings size={24} />
         </button>
