@@ -1,5 +1,5 @@
 import PopUpCharts from "../../components/PopUpCharts";
-import "./index.css"
+// import "./index.css"
 
 export default function ChartPage() {
   return (

@@ -7,9 +7,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { BarChart } from '@mui/x-charts/BarChart';
+import "../pages/charts/index.css"
 
-
-export default function PopUpCharts() {
+export default function PopUpCharts({hidden, clickBackGround}) {
   const [selectedRow, setSelectedRow] = React.useState(null);
   const [data, setData] = React.useState([]);
   const [dataBarChart1, setDataBarChart1] = React.useState({})
@@ -52,10 +52,14 @@ export default function PopUpCharts() {
 
   };  
 
+  if (hidden) return null;
   return(
         <>
-            <div className="fixed inset-0 bg-gray-800 flex items-center justify-center z-10">
-                <div className="flex h-[90%] w-[85%] rounded-lg glassmorphism">
+            <div 
+              onClick={clickBackGround}
+              style={{zIndex: 51}}
+              className="fixed inset-0 bg-black backdrop-blur-sm bg-opacity-40 flex items-center justify-center">
+                <div className="flex h-[90%] w-[85%] rounded-lg bg-white">
                   <div className='flex flex-1 p-3'>
                     <TableContainer component={Paper} >
                       <Table aria-label="simple table" stickyHeader >
@@ -76,7 +80,7 @@ export default function PopUpCharts() {
                               key={row.name}
                               onClick={() => handleRowClick(index, row.location) }
                               sx={{ '&:last-child td, &:last-child th': { border: 0 },
-                                    backgroundColor: selectedRow === index ? 'cyan' : 'white',
+                                    backgroundColor: selectedRow === index ? '#02B2AF' : 'white',
                                     cursor: 'pointer' }}
                               
                             >
